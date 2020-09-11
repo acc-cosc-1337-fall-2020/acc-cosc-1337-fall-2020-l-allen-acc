@@ -1,7 +1,8 @@
 //write include statements
-
+#include <iostream>
 
 //write namespace using statements
+using std::cout;	using std::cin;
 
 /*
 Capture units and rate values from keyboard.

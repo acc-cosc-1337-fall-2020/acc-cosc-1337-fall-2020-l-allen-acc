@@ -14,6 +14,11 @@ double parameter
 @param double num
 @return the num parameter
 */
+int convert_double_to_int(double num1)
+{
+    int test = num1;
+    return test;
+}
 
 /*
 Function static_cast_double_int with a double parameter that does
