@@ -14,7 +14,7 @@ TEST_CASE("Test sum_numbers function")
 TEST_CASE("Test multiple_numbers function")
 {
 	REQUIRE(multiply_numbers(10) == 50);
-	//REQUIRE(multiply_numbers(5, 5) == 10);			// Does not work! Argument can not exceed what's in src folder.
+	REQUIRE(multiply_numbers(2) == 10);			// Does not work! Argument can not exceed what's in src folder.
 }
 
 
