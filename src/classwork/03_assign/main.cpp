@@ -12,8 +12,15 @@ int main()
 	cout << "Input a grade between 0 and 100:\t";
 	cin >> grade;
 
-	cout << "\nYour letter grade is " << get_letter_grade_using_if(grade) << " (Using if statements)" << std::endl;
-	cout << "Your letter grade is " << get_letter_grade_using_switch(grade) << " (Using switch statements)" << std::endl;
+	if(grade >= 0 && grade <= 100)
+	{
+		cout << "\nYour letter grade is " << get_letter_grade_using_if(grade) << " (Using if statements)" << std::endl;
+		cout << "Your letter grade is " << get_letter_grade_using_switch(grade) << " (Using switch statements)" << std::endl;
+	}
+	else
+	{
+		cout<<"Invalid grade";
+	}
 
 	return 0;
 }
