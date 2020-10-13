@@ -14,7 +14,12 @@ and displays the numbers to screen using an indexed for loop as follows: 9 10 99
 
 */
 
+void loop_string_w_index(std::string str);
 
+/* void loopp_vector_w_index(std::vector<int> nums)
+{
+    for()
+} */
 
 /*
 Function loop_vector_w_index_val 

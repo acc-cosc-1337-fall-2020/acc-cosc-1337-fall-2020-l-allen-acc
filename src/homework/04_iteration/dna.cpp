@@ -31,15 +31,15 @@ double get_gc_content(const std::string& str)
 Write code for function get_reverse_string that
 accepts a string parameter and returns a string reversed.
 */
-string get_reverse_string(std::string str)
+string get_reverse_string(std::string str1)
 {
     string reverse = "";
     
 
-    for (std::size_t i = str.size(); i >= 0; --i)
+    for (int i= str1.length(); i >= 0; --i)
     {
         
-        reverse += str[i];
+        reverse += str1[i];
 
     }
     
@@ -58,12 +58,12 @@ b. iterate local string variable and
 c. return string
 
 */
-std::string get_dna_complement(std::string str)
+std::string get_dna_complement(std::string str1)
 {
     string replace = "";
     char letter;
 
-    string reverse = get_reverse_string(str);
+    string reverse = get_reverse_string(str1);
 
     for (auto i : reverse)
     {
