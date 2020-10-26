@@ -2,24 +2,21 @@
 #include "catch.hpp"
 #include "tic_tac_toe.h"
 
-using std::cin;	using std::cout;
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
-TEST_CASE("")
+TEST_CASE("Tic Tac Toe full game")
 {
-	int mark;
-	Specifications test;
+	TicTacToe test;
 	test.start_game("X");
-	for (int i = 0; i<9; i++)
+	for (int i = 0; i<8; i++)
 	{
-		cout << "mark";
-		cin >> mark;
-		test.mark_board(mark);
-		test.display_board();
+		test.mark_board(i);
+		REQUIRE(test.game_over() == false);
 	}
 	
+	test.mark_board(9);
 	REQUIRE(test.game_over() == true);
 }

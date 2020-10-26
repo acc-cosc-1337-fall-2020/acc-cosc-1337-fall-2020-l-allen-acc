@@ -8,7 +8,7 @@
 
 using std::string;  using std::vector;
 
-class Specifications
+class TicTacToe
 {
 public:
     bool game_over();

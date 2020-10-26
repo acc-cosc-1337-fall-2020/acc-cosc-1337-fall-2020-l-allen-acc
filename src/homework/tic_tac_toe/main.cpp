@@ -7,7 +7,7 @@ int main()
 {
 	int mark;
 	std::string player;
-	Specifications game;
+	TicTacToe game;
 	cout << "Choose a player ('X' or 'O')\t";
 	cin >> player;
 	game.start_game(player);
