@@ -23,14 +23,15 @@ int main()
 
 		game.start_game(player);
 
-		while (game.game_over() == false)
+		do
 		{
 			cout << "Choose a position (1-9)\t";
 			cin >> mark;
 			game.mark_board(mark);
 			game.display_board();
-		} 
-
+		} while (game.game_over() == false);
+		
+		cout << "\n" << game.get_winner() << " is the winner!";
 		cout << "\n***GAME OVER!***\n";
 
 		cout << "Would you like to play again? ('Y' or 'y' to continue)\n";

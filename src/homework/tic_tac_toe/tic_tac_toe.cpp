@@ -53,9 +53,9 @@ string TicTacToe::get_winner()
 
 bool TicTacToe::check_column_win()
 {
-    if ((pegs[0] == pegs[3] && pegs[3] == pegs[6]) ||
-        (pegs[1] == pegs[4] && pegs[4] == pegs[7]) ||
-        (pegs[2] == pegs[5] && pegs[5] == pegs[8]))
+    if (((pegs[0] == pegs[3] && pegs[3] == pegs[6]) && pegs[0] != " ") ||
+        ((pegs[1] == pegs[4] && pegs[4] == pegs[7]) && pegs[1] != " ") ||
+        ((pegs[2] == pegs[5] && pegs[5] == pegs[8]) && pegs[2] != " "))
         return true;
     
     else {return false;}
@@ -63,9 +63,9 @@ bool TicTacToe::check_column_win()
 
 bool TicTacToe::check_row_win()
 {
-    if ((pegs[0] == pegs[1] && pegs[1] == pegs[2]) ||
-        (pegs[3] == pegs[4] && pegs[4] == pegs[5]) ||
-        (pegs[6] == pegs[7] && pegs[7] == pegs[8]))
+    if (((pegs[0] == pegs[1] && pegs[1] == pegs[2]) && pegs[0] != " ") ||
+        ((pegs[3] == pegs[4] && pegs[4] == pegs[5]) && pegs[3] != " ") ||
+        ((pegs[6] == pegs[7] && pegs[7] == pegs[8]) && pegs[6] != " "))
         return true;
     
     else {return false;}
@@ -73,13 +73,14 @@ bool TicTacToe::check_row_win()
 
 void TicTacToe::set_winner()
 {
-    winner = get_player();
+    if (player == "X") {winner = "O";}
+    else {winner = "X";}
 }
 
 bool TicTacToe::check_diagnol_win()
 {
-    if ((pegs[0] == pegs[4] && pegs[4] == pegs[8]) ||
-        (pegs[6] == pegs[4] && pegs[4] == pegs[2]))
+    if (((pegs[0] == pegs[4] && pegs[4] == pegs[8]) && pegs[0] != " ") ||
+        ((pegs[6] == pegs[4] && pegs[4] == pegs[2]) && pegs[6] != " "))
         return true;
     
     else {return false;}
