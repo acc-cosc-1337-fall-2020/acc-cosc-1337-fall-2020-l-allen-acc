@@ -3,43 +3,95 @@
 
 using std::cout;
 
-bool Specifications::game_over() 
+bool TicTacToe::game_over() 
 {
-    return check_board_full(); 
+    if (check_column_win() == true || check_row_win() == true || check_diagnol_win() == true)
+    {
+        set_winner();
+        return true;    
+    }
+
+    else if (check_board_full() == true) 
+    {
+        player = "C";
+        set_winner();
+        return true;
+    }
+
+    else return false; 
 }
 
-void Specifications::start_game(string first_player) 
+void TicTacToe::start_game(string first_player) 
 {
     player = first_player;
 
     clear_board();
 }
 
-void Specifications::mark_board(int position)
+void TicTacToe::mark_board(int position)
 {
     pegs[position - 1] = player;
     set_next_player();
 }
 
-string Specifications::get_player() const
+string TicTacToe::get_player() const
 {
     return player;
 }
 
-void Specifications::display_board() const
+void TicTacToe::display_board() const
 {
     cout<<pegs[0]<<"|"<<pegs[1]<<"|"<<pegs[2] <<std::endl
         <<pegs[3]<<"|"<<pegs[4]<<"|"<<pegs[5] <<std::endl
         <<pegs[6]<<"|"<<pegs[7]<<"|"<<pegs[8] << "\n\n";
 }
 
-void Specifications::set_next_player()
+string TicTacToe::get_winner()
+{
+    return winner;
+}
+
+bool TicTacToe::check_column_win()
+{
+    if ((pegs[0] == pegs[3] && pegs[3] == pegs[6]) ||
+        (pegs[1] == pegs[4] && pegs[4] == pegs[7]) ||
+        (pegs[2] == pegs[5] && pegs[5] == pegs[8]))
+        return true;
+    
+    else {return false;}
+}
+
+bool TicTacToe::check_row_win()
+{
+    if ((pegs[0] == pegs[1] && pegs[1] == pegs[2]) ||
+        (pegs[3] == pegs[4] && pegs[4] == pegs[5]) ||
+        (pegs[6] == pegs[7] && pegs[7] == pegs[8]))
+        return true;
+    
+    else {return false;}
+}
+
+void TicTacToe::set_winner()
+{
+    winner = get_player();
+}
+
+bool TicTacToe::check_diagnol_win()
+{
+    if ((pegs[0] == pegs[4] && pegs[4] == pegs[8]) ||
+        (pegs[6] == pegs[4] && pegs[4] == pegs[2]))
+        return true;
+    
+    else {return false;}
+}
+
+void TicTacToe::set_next_player()
 {
     if (player == "X") {player = "O";}
     else {player = "X";}
 }
 
-bool Specifications::check_board_full()
+bool TicTacToe::check_board_full()
 {
     for (auto i : pegs) 
     {
@@ -49,7 +101,7 @@ bool Specifications::check_board_full()
     return true;    
 }
 
-void Specifications::clear_board()
+void TicTacToe::clear_board()
 {
     for (std::size_t i; i<pegs.size(); i++)
     {
