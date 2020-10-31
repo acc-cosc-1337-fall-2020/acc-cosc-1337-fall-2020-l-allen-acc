@@ -2,7 +2,6 @@
 #include "catch.hpp"
 #include "tic_tac_toe.h"
 
-using std::cin;	using std::cout;
 
 TEST_CASE("Verify Test Configuration", "verification") 
 {
