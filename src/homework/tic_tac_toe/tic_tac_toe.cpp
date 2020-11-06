@@ -31,7 +31,7 @@ void TicTacToe::start_game(string first_player)
 void TicTacToe::mark_board(int position)
 {
     pegs[position - 1] = player;
-    set_next_player();
+    if (game_over() == false) set_next_player();
 }
 
 string TicTacToe::get_player() const
@@ -39,14 +39,14 @@ string TicTacToe::get_player() const
     return player;
 }
 
-void TicTacToe::display_board() const
+/* void TicTacToe::display_board() const
 {
     cout<<pegs[0]<<"|"<<pegs[1]<<"|"<<pegs[2] <<std::endl
         <<pegs[3]<<"|"<<pegs[4]<<"|"<<pegs[5] <<std::endl
         <<pegs[6]<<"|"<<pegs[7]<<"|"<<pegs[8] << "\n\n";
-}
+} */
 
-string TicTacToe::get_winner()
+string TicTacToe::get_winner() const
 {
     return winner;
 }
@@ -104,8 +104,24 @@ bool TicTacToe::check_board_full()
 
 void TicTacToe::clear_board()
 {
-    for (std::size_t i; i<pegs.size(); i++)
-    {
-        if (pegs[i] != " ") {pegs[i] = " ";}
-    }
+    pegs = {9 ," "};
+}
+
+std::ostream & operator<<(std::ostream & out, const TicTacToe & display)
+{
+    out <<display.pegs[0]<<"|"<<display.pegs[1]<<"|"<<display.pegs[2] <<std::endl
+        <<display.pegs[3]<<"|"<<display.pegs[4]<<"|"<<display.pegs[5] <<std::endl
+        <<display.pegs[6]<<"|"<<display.pegs[7]<<"|"<<display.pegs[8] << "\n\n";
+
+    return out;
+}
+
+std::istream & operator>>(std::istream & in, TicTacToe & mark)
+{
+    int position;
+    std::cout << "Enrter position:\t";
+    in >> position;
+    mark.mark_board(position);
+
+    return in;
 }

@@ -16,14 +16,17 @@ TEST_CASE("Determine a tie - Test Case")
 	for (int i=1; i<6; i++)
 	{
 	tie.mark_board(i);
+	REQUIRE(tie.game_over() == false);
 	}
 	tie.mark_board(7);
+	REQUIRE(tie.game_over() == false);
 	tie.mark_board(6);
+	REQUIRE(tie.game_over() == false);
 	tie.mark_board(9);
+	REQUIRE(tie.game_over() == false);
 	tie.mark_board(8);
-
-	tie.game_over();
 	
+	REQUIRE(tie.game_over() == true);
 	REQUIRE(tie.get_winner() == "C");
 }
 
@@ -54,6 +57,7 @@ TEST_CASE("Win by first column - Test Case")
 	col1.mark_board(7);
 
 	REQUIRE(col1.game_over() == true);
+	REQUIRE(col1.get_winner() == "X");
 }
 
 TEST_CASE("Win by second column - Test Case")
@@ -67,6 +71,7 @@ TEST_CASE("Win by second column - Test Case")
 	col2.mark_board(8);
 
 	REQUIRE(col2.game_over() == true);
+	REQUIRE(col2.get_winner() == "X");
 }
 
 TEST_CASE("Win by third column - Test Case")
@@ -80,6 +85,7 @@ TEST_CASE("Win by third column - Test Case")
 	col3.mark_board(9);
 
 	REQUIRE(col3.game_over() == true);
+	REQUIRE(col3.get_winner() == "X");
 }
 
 TEST_CASE("Win by first row - Test Case")
@@ -93,6 +99,7 @@ TEST_CASE("Win by first row - Test Case")
 	row1.mark_board(3);
 
 	REQUIRE(row1.game_over() == true);
+	REQUIRE(row1.get_winner() == "X");
 }
 
 TEST_CASE("Win by second row - Test Case")
@@ -106,6 +113,7 @@ TEST_CASE("Win by second row - Test Case")
 	row2.mark_board(6);
 
 	REQUIRE(row2.game_over() == true);
+	REQUIRE(row2.get_winner() == "X");
 }
 
 TEST_CASE("Win by third row - Test Case")
@@ -119,6 +127,7 @@ TEST_CASE("Win by third row - Test Case")
 	row3.mark_board(9);
 
 	REQUIRE(row3.game_over() == true);
+	REQUIRE(row3.get_winner() == "X");
 }
 
 TEST_CASE("Win by top left diagnol - Test Case")
@@ -132,6 +141,7 @@ TEST_CASE("Win by top left diagnol - Test Case")
 	diag1.mark_board(9);
 
 	REQUIRE(diag1.game_over() == true);
+	REQUIRE(diag1.get_winner() == "X");
 }
 
 TEST_CASE("Win by bottom left diagnol - Test Case")
@@ -145,5 +155,6 @@ TEST_CASE("Win by bottom left diagnol - Test Case")
 	diag2.mark_board(7);
 
 	REQUIRE(diag2.game_over() == true);
+	REQUIRE(diag2.get_winner() == "X");
 }
 
