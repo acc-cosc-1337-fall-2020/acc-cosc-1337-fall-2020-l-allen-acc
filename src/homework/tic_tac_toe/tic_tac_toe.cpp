@@ -53,22 +53,12 @@ string TicTacToe::get_winner() const
 
 bool TicTacToe::check_column_win()
 {
-    if (((pegs[0] == pegs[3] && pegs[3] == pegs[6]) && pegs[0] != " ") ||
-        ((pegs[1] == pegs[4] && pegs[4] == pegs[7]) && pegs[1] != " ") ||
-        ((pegs[2] == pegs[5] && pegs[5] == pegs[8]) && pegs[2] != " "))
-        return true;
-    
-    else {return false;}
+    return false;
 }
 
 bool TicTacToe::check_row_win()
 {
-    if (((pegs[0] == pegs[1] && pegs[1] == pegs[2]) && pegs[0] != " ") ||
-        ((pegs[3] == pegs[4] && pegs[4] == pegs[5]) && pegs[3] != " ") ||
-        ((pegs[6] == pegs[7] && pegs[7] == pegs[8]) && pegs[6] != " "))
-        return true;
-    
-    else {return false;}
+    return false;
 }
 
 void TicTacToe::set_winner()
@@ -79,11 +69,7 @@ void TicTacToe::set_winner()
 
 bool TicTacToe::check_diagnol_win()
 {
-    if (((pegs[0] == pegs[4] && pegs[4] == pegs[8]) && pegs[0] != " ") ||
-        ((pegs[6] == pegs[4] && pegs[4] == pegs[2]) && pegs[6] != " "))
-        return true;
-    
-    else {return false;}
+    return false;
 }
 
 void TicTacToe::set_next_player()
@@ -104,15 +90,27 @@ bool TicTacToe::check_board_full()
 
 void TicTacToe::clear_board()
 {
-    pegs = {9 ," "};
+    for(std::size_t i=0; i < pegs.size(); ++i)
+    {
+        pegs[i] = " ";
+    }
 }
 
 std::ostream & operator<<(std::ostream & out, const TicTacToe & display)
 {
-    out <<display.pegs[0]<<"|"<<display.pegs[1]<<"|"<<display.pegs[2] <<std::endl
-        <<display.pegs[3]<<"|"<<display.pegs[4]<<"|"<<display.pegs[5] <<std::endl
-        <<display.pegs[6]<<"|"<<display.pegs[7]<<"|"<<display.pegs[8] << "\n\n";
-
+    if (display.pegs.size()==9)
+    {
+        out <<display.pegs[0]<<"|"<<display.pegs[1]<<"|"<<display.pegs[2] <<std::endl
+            <<display.pegs[3]<<"|"<<display.pegs[4]<<"|"<<display.pegs[5] <<std::endl
+            <<display.pegs[6]<<"|"<<display.pegs[7]<<"|"<<display.pegs[8] << "\n\n";       
+    }
+    else
+    {
+        out <<display.pegs[0]<<"|"<<display.pegs[1]<<"|"<<display.pegs[2]<<"|"<<display.pegs[3] <<std::endl
+            <<display.pegs[4]<<"|"<<display.pegs[5]<<"|"<<display.pegs[6]<<"|"<<display.pegs[7] <<std::endl
+            <<display.pegs[8]<<"|"<<display.pegs[9]<<"|"<<display.pegs[10]<<"|"<<display.pegs[11] <<std::endl
+            <<display.pegs[12]<<"|"<<display.pegs[13]<<"|"<<display.pegs[14]<<"|"<<display.pegs[15] << "\n\n";
+    }
     return out;
 }
 
