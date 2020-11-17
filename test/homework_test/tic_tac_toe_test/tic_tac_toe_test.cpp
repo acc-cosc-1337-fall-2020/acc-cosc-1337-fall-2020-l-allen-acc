@@ -14,7 +14,7 @@ TEST_CASE("Verify Test Configuration", "verification")
 	REQUIRE(true == true);
 }
 
-TEST_CASE("Determine a tie - Test Case")
+TEST_CASE("Determine a tie 3x3 - Test Case")
 {
 	std::unique_ptr<TicTacToe> board = std::make_unique<TicTacToe3> ();
 	board->start_game("X");
@@ -36,7 +36,7 @@ TEST_CASE("Determine a tie - Test Case")
 	REQUIRE(board->get_winner() == "C");
 }
 
-TEST_CASE("First player set to 'X' - Test Case")
+TEST_CASE("First player set to 'X' 3x3 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> x = make_unique<TicTacToe3> ();
@@ -45,7 +45,7 @@ TEST_CASE("First player set to 'X' - Test Case")
 	REQUIRE(x->get_player() == "X");
 }
 
-TEST_CASE("First player ste to 'O' - Test Case")
+TEST_CASE("First player ste to 'O' 3x3 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> o = make_unique<TicTacToe3> ();
@@ -55,7 +55,7 @@ TEST_CASE("First player ste to 'O' - Test Case")
 	REQUIRE(o->get_player() == "O");
 }
 
-TEST_CASE("Win by first column - Test Case")
+TEST_CASE("Win by first column 3x3 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> col1 = make_unique<TicTacToe3> ();
@@ -70,7 +70,7 @@ TEST_CASE("Win by first column - Test Case")
 	REQUIRE(col1->get_winner() == "X");
 }
 
-TEST_CASE("Win by second column - Test Case")
+TEST_CASE("Win by second column 3x3 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> col2 = make_unique<TicTacToe3> ();
@@ -85,7 +85,7 @@ TEST_CASE("Win by second column - Test Case")
 	REQUIRE(col2->get_winner() == "X");
 }
 
-TEST_CASE("Win by third column - Test Case")
+TEST_CASE("Win by third column 3x3 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> col3 = make_unique<TicTacToe3> ();
@@ -100,7 +100,7 @@ TEST_CASE("Win by third column - Test Case")
 	REQUIRE(col3->get_winner() == "X");
 }
 
-TEST_CASE("Win by first row - Test Case")
+TEST_CASE("Win by first row 3x3 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> row1 = make_unique<TicTacToe3> ();
@@ -115,7 +115,7 @@ TEST_CASE("Win by first row - Test Case")
 	REQUIRE(row1->get_winner() == "X");
 }
 
-TEST_CASE("Win by second row - Test Case")
+TEST_CASE("Win by second row 3x3 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> row2 = make_unique<TicTacToe3> ();
@@ -130,7 +130,7 @@ TEST_CASE("Win by second row - Test Case")
 	REQUIRE(row2->get_winner() == "X");
 }
 
-TEST_CASE("Win by third row - Test Case")
+TEST_CASE("Win by third row 3x3 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> row3 = make_unique<TicTacToe3> ();
@@ -145,7 +145,7 @@ TEST_CASE("Win by third row - Test Case")
 	REQUIRE(row3->get_winner() == "X");
 }
 
-TEST_CASE("Win by top left diagnol - Test Case")
+TEST_CASE("Win by top left diagnol 3x3 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> diag1 = make_unique<TicTacToe3> ();
@@ -160,7 +160,7 @@ TEST_CASE("Win by top left diagnol - Test Case")
 	REQUIRE(diag1->get_winner() == "X");
 }
 
-TEST_CASE("Win by bottom left diagnol - Test Case")
+TEST_CASE("Win by bottom left diagnol 3x3 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> diag2 = make_unique<TicTacToe3> ();
@@ -177,7 +177,7 @@ TEST_CASE("Win by bottom left diagnol - Test Case")
 
 
 
-TEST_CASE("Determine a tie - Test Case")
+TEST_CASE("Determine a tie 4x4- Test Case")
 {
 	
 	unique_ptr<TicTacToe> tie = make_unique<TicTacToe3> ();
@@ -202,7 +202,7 @@ TEST_CASE("Determine a tie - Test Case")
 	REQUIRE(tie->get_winner() == "C");
 }
 
-TEST_CASE("First player set to 'X' - Test Case")
+TEST_CASE("First player set to 'X' 4x4 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> x1 = make_unique<TicTacToe3> ();
@@ -213,7 +213,7 @@ TEST_CASE("First player set to 'X' - Test Case")
 	REQUIRE(x1->get_player() == "X");
 }
 
-TEST_CASE("First player ste to 'O' - Test Case")
+TEST_CASE("First player ste to 'O' 4x4 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> o1 = make_unique<TicTacToe3> ();
@@ -223,7 +223,7 @@ TEST_CASE("First player ste to 'O' - Test Case")
 	REQUIRE(o1->get_player() == "O");
 }
 
-TEST_CASE("Win by first column - Test Case")
+TEST_CASE("Win by first column 4x4 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> col_1 = make_unique<TicTacToe3> ();
@@ -241,7 +241,7 @@ TEST_CASE("Win by first column - Test Case")
 	REQUIRE(col_1->get_winner() == "X");
 }
 
-TEST_CASE("Win by second column - Test Case")
+TEST_CASE("Win by second column 4x4 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> col_2 = make_unique<TicTacToe3> ();
@@ -259,7 +259,7 @@ TEST_CASE("Win by second column - Test Case")
 	REQUIRE(col_2->get_winner() == "X");
 }
 
-TEST_CASE("Win by third column - Test Case")
+TEST_CASE("Win by third column 4x4 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> col_3 = make_unique<TicTacToe3> ();
@@ -277,7 +277,7 @@ TEST_CASE("Win by third column - Test Case")
 	REQUIRE(col_3->get_winner() == "X");
 }
 
-TEST_CASE("Win by fourth column - Test Case")
+TEST_CASE("Win by fourth column 4x4 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> col4 = make_unique<TicTacToe3> ();
@@ -295,7 +295,7 @@ TEST_CASE("Win by fourth column - Test Case")
 	REQUIRE(col4->get_winner() == "X");
 }
 
-TEST_CASE("Win by first row - Test Case")
+TEST_CASE("Win by first row 4x4 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> row_1 = make_unique<TicTacToe3> ();
@@ -313,7 +313,7 @@ TEST_CASE("Win by first row - Test Case")
 	REQUIRE(row_1->get_winner() == "X");
 }
 
-TEST_CASE("Win by second row - Test Case")
+TEST_CASE("Win by second row 4x4 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> row_2 = make_unique<TicTacToe3> ();
@@ -331,7 +331,7 @@ TEST_CASE("Win by second row - Test Case")
 	REQUIRE(row_2->get_winner() == "X");
 }
 
-TEST_CASE("Win by third row - Test Case")
+TEST_CASE("Win by third row 4x4 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> row_3 = make_unique<TicTacToe3> ();
@@ -348,7 +348,7 @@ TEST_CASE("Win by third row - Test Case")
 	REQUIRE(row_3->game_over() == true);
 	REQUIRE(row_3->get_winner() == "X");
 }
-TEST_CASE("Win by third row - Test Case")
+TEST_CASE("Win by third row 4x4 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> row4 = make_unique<TicTacToe3> ();
@@ -366,7 +366,7 @@ TEST_CASE("Win by third row - Test Case")
 	REQUIRE(row4->get_winner() == "X");
 }
 
-TEST_CASE("Win by top left diagnol - Test Case")
+TEST_CASE("Win by top left diagnol 4x4 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> diag_1 = make_unique<TicTacToe3> ();
@@ -384,7 +384,7 @@ TEST_CASE("Win by top left diagnol - Test Case")
 	REQUIRE(diag_1->get_winner() == "X");
 }
 
-TEST_CASE("Win by bottom left diagnol - Test Case")
+TEST_CASE("Win by bottom left diagnol 4x4 - Test Case")
 {
 	
 	unique_ptr<TicTacToe> diag_2 = make_unique<TicTacToe3> ();
