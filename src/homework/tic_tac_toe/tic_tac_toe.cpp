@@ -96,6 +96,7 @@ void TicTacToe::clear_board()
     }
 }
 
+
 std::ostream & operator<<(std::ostream & out, const TicTacToe & display)
 {
     if (display.pegs.size()==9)

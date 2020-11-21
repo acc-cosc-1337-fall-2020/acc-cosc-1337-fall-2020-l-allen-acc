@@ -2,6 +2,7 @@
 #include "tic_tac_toe_manager.h"
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
+#include "tic_tac_toe_data.h"
 #include <iostream>
 #include <utility>
 
@@ -13,9 +14,9 @@ int main()
 	char option;
 	int gametype;
 	std::unique_ptr<TicTacToe> game = nullptr;
-	TicTacToeManager stats;
-	//TicTacToe3 t3;
-	//TicTacToe4 t4;
+	
+	TicTacToeData data;
+	TicTacToeManager stats(data);
 
 	do
 	{

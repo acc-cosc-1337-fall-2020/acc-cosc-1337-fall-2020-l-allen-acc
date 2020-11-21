@@ -28,3 +28,18 @@ void TicTacToeManager::update_winner_count(std::string winner)
     else if (winner == "O") { o_win++; }
     else { tie++; }
 }
+
+TicTacToeManager::TicTacToeManager(TicTacToeData &data)
+{
+    games = std::move(data.get_games());
+
+    for (auto& i : games)
+    {
+        update_winner_count(i->get_winner());
+    }
+}
+
+TicTacToeManager::~TicTacToeManager()
+{
+    data.save_games(games);
+}
